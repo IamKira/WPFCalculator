@@ -20,13 +20,13 @@ namespace WPFCalc
         public MainWindow()
         {
             InitializeComponent();
-            
+
         }
         private void Click_to_num(object sender, EventArgs e)
         {
             CalcField.CaretIndex = CalcField.Text.Length;
             int caret = CalcField.CaretIndex;
-            CalcField.Text = CalcField.Text.Insert( caret, ((Button)sender).Content.ToString());
+            CalcField.Text = CalcField.Text.Insert(caret, ((Button)sender).Content.ToString());
         }
         private void CleanField(object sender, EventArgs e)
         {
@@ -39,14 +39,28 @@ namespace WPFCalc
         private void Click_to_equally(object sender, EventArgs e)
         {
             string expression = CalcField.Text;
-            CalcField.Text = Calculation(expression);
+            CalcField.Text = Calculation(expression).ToString();
         }
-        
-        private string Calculation(string s)
+        private float Calculation(string s)
         {
             StrCalc.Expression expr = new StrCalc.Expression(s);
-            string result = expr.Calc().ToString();
+            float result = expr.Calc();
             return result;
+        }
+        private void Sin(object sender, EventArgs e)
+        {
+            string expression = CalcField.Text;
+            CalcField.Text = Math.Sin(Calculation(expression)).ToString();
+        }
+        private void Cos(object sender, EventArgs e)
+        {
+            string expression = CalcField.Text;
+            CalcField.Text = Math.Cos(Calculation(expression)).ToString();
+        }
+        private void Tan(object sender, EventArgs e)
+        {
+            string expression = CalcField.Text;
+            CalcField.Text = Math.Tan(Calculation(expression)).ToString();
         }
     }
 }

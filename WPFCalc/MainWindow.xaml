@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFCalc"
         mc:Ignorable="d"
-        Title="Калькулятор" Height="435" Width="720">
+        Title="Калькулятор" Height="435" Width="436">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="55"></RowDefinition>
@@ -16,7 +16,7 @@
             <ColumnDefinition Width="15"></ColumnDefinition>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Row="0" Grid.Column="0" Width="420" Height="55" x:Name="CalcField" TextAlignment="Left" ></TextBox>
+        <TextBox Grid.Row="0" Grid.Column="0" Width="420" Height="55" x:Name="CalcField" TextAlignment="Left" FontSize="36" FontFamily="Open Sans" />
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
@@ -34,30 +34,30 @@
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Grid.Row="1" Grid.Column="0" Content="√" Click="Click_to_num"></Button>
-            <Button Grid.Row="1" Grid.Column="1" Content="^" Click="Click_to_num"></Button>
-            <Button Grid.Row="1" Grid.Column="2" Content="sin"></Button>
-            <Button Grid.Row="1" Grid.Column="3" Content="cos"></Button>
-            <Button Grid.Row="1" Grid.Column="4" Content="tan"></Button>
+            <Button Grid.Row="1" Grid.Column="0" Content="√" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="1" Grid.Column="1" Content="^" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="1" Grid.Column="2" Content="sin" Click="Sin" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="1" Grid.Column="3" Content="cos" Click="Cos" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="1" Grid.Column="4" Content="tan" Click="Tan" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
 
-            <Button Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Content="*" Click="Click_to_num"></Button>
-            <Button Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Content="/" Click="Click_to_num"></Button>
-            <Button Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Content="+" Click="Click_to_num"></Button>
-            <Button Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Content="-" Click="Click_to_num"></Button>
-            <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5" Content="=" Click="Click_to_equally"></Button>
+            <Button Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Content="*" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" Content="/" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" Content="+" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" Content="-" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5" Content="=" Click="Click_to_equally" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
 
-            <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Width="210" HorizontalAlignment="Left" Content="CE"  Click="CleanField"></Button>
-            <Button Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Content="←" Width="210" HorizontalAlignment="Right" Click="ClearSymbol"></Button>
+            <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Width="210" HorizontalAlignment="Left" Content="CE"  Click="CleanField" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="3" Content="←" Width="210" HorizontalAlignment="Right" Click="ClearSymbol" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
 
-            <Button Grid.Row="2" Grid.Column="0" Content="7" Click="Click_to_num"></Button>
-            <Button Grid.Row="2" Grid.Column="1" Content="8" Click="Click_to_num"></Button>
-            <Button Grid.Row="2" Grid.Column="2" Content="9" Click="Click_to_num"></Button>
-            <Button Grid.Row="3" Grid.Column="0" Content="4" Click="Click_to_num"></Button>
-            <Button Grid.Row="3" Grid.Column="1" Content="5" Click="Click_to_num"></Button>
-            <Button Grid.Row="3" Grid.Column="2" Content="6" Click="Click_to_num"></Button>
-            <Button Grid.Row="4" Grid.Column="0" Content="1" Click="Click_to_num"></Button>
-            <Button Grid.Row="4" Grid.Column="1" Content="2" Click="Click_to_num"></Button>
-            <Button Grid.Row="4" Grid.Column="2" Content="3" Click="Click_to_num"></Button>
+            <Button Grid.Row="2" Grid.Column="0" Content="7" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="2" Grid.Column="1" Content="8" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="2" Grid.Column="2" Content="9" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="3" Grid.Column="0" Content="4" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="3" Grid.Column="1" Content="5" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="3" Grid.Column="2" Content="6" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="4" Grid.Column="0" Content="1" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="4" Grid.Column="1" Content="2" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="4" Grid.Column="2" Content="3" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
             <Grid Grid.Row="5" Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
@@ -66,11 +66,11 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="0" Content="(" Click="Click_to_num"></Button>
-                <Button Grid.Row="0" Grid.Column="1" Content=")" Click="Click_to_num"></Button>
+                <Button Grid.Row="0" Grid.Column="0" Content="(" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+                <Button Grid.Row="0" Grid.Column="1" Content=")" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
             </Grid>
-            <Button Grid.Row="5" Grid.Column="1" Content="0" Click="Click_to_num"></Button>
-            <Button Grid.Row="5" Grid.Column="2" Content="," Click="Click_to_num"></Button>
+            <Button Grid.Row="5" Grid.Column="1" Content="0" Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
+            <Button Grid.Row="5" Grid.Column="2" Content="," Click="Click_to_num" FontSize="18" FontFamily="Source Code Pro" Background="{DynamicResource {x:Static SystemColors.InactiveCaptionBrushKey}}"/>
         </Grid>
     </Grid>
 </Window>
