@@ -22,7 +22,6 @@ namespace WPFCalc
             InitializeComponent();
             
         }
-
         private void Click_to_num(object sender, EventArgs e)
         {
             CalcField.CaretIndex = CalcField.Text.Length;
@@ -42,6 +41,7 @@ namespace WPFCalc
             string expression = CalcField.Text;
             CalcField.Text = Calculation(expression);
         }
+        
         private string Calculation(string s)
         {
             StrCalc.Expression expr = new StrCalc.Expression(s);

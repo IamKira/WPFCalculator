@@ -49,6 +49,24 @@ namespace WPFCalc
             }
         }
 
+        class Radical : Unary
+        {
+            public Radical (Operation n) : base (n) { }
+            public override float Eval()
+            {
+                return (float)Math.Sqrt(one.Eval());
+            }
+        }
+
+        class Power : Binary
+        {
+            public Power(Operation l, Operation r) : base(l, r) { }
+            public override float Eval()
+            {
+                return (float)Math.Pow(left.Eval(), right.Eval());
+            }
+        }
+
         //Сложение
         class Plus : Binary
         {
@@ -132,8 +150,26 @@ namespace WPFCalc
                 }
             }
 
-            //Высокий приоритет: одинокий минус, скобки, число
+            //Промежуточный приоритет: степень
             private Operation Parse2()
+            {
+                Operation result = Parse3();
+                for(; ; )
+                {
+                    if (Match('^'))
+                    {
+                        result = new Power(result, Parse3());
+                    }
+                    else if (Match('√'))
+                    {
+                        result = new Radical(Parse3());
+                    }
+                    else return result;
+                }
+            }
+
+            //Высокий приоритет: одинокий минус, скобки, число, корень, степень
+            private Operation Parse3()
             {
                 Operation result = null;
 
@@ -145,7 +181,8 @@ namespace WPFCalc
                 {
                     result = Parse0();
                     if (!Match(')'))
-                        /*******/Console.WriteLine("Missing ')'");
+                        /*******/
+                        Console.WriteLine("Missing ')'");
                 }
                 else
                 {
@@ -160,7 +197,6 @@ namespace WPFCalc
                 }
                 return result;
             }
-
             //Поиск символа в строке
             private bool Match(char ch)
             {
