@@ -20,13 +20,16 @@ namespace WPFCalc
         public MainWindow()
         {
             InitializeComponent();
-
         }
         private void Click_to_num(object sender, EventArgs e)
         {
-            CalcField.CaretIndex = CalcField.Text.Length;
+            if(CalcField.Text == "")
+            {
+                CalcField.CaretIndex = CalcField.Text.Length;
+            }
             int caret = CalcField.CaretIndex;
             CalcField.Text = CalcField.Text.Insert(caret, ((Button)sender).Content.ToString());
+            CalcField.CaretIndex = caret+1;
         }
         private void CleanField(object sender, EventArgs e)
         {

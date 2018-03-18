@@ -16,7 +16,7 @@
             <ColumnDefinition Width="15"></ColumnDefinition>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Row="0" Grid.Column="0" Width="420" Height="55" x:Name="CalcField" TextAlignment="Left" FontSize="36" FontFamily="Open Sans" />
+        <TextBox Grid.Row="0" Grid.Column="0" Width="420" Height="55" x:Name="CalcField" TextAlignment="Left" FontSize="36" FontFamily="Open Sans" Background="White"/>
         <Grid Grid.Row="1" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
