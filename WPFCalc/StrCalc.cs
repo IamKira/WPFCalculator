@@ -152,7 +152,7 @@ namespace WPFCalc
                     //распарсим число
                     float val = 0.0f;
                     int start = pos;
-                    while (pos < source.Length && (char.IsDigit(source[pos]) || source[pos] == '.' || source[pos] == 'e'))
+                    while (pos < source.Length && (char.IsDigit(source[pos]) || source[pos] == ',' || source[pos] == 'e'))
                         ++pos;
                     try { val = float.Parse(source.Substring(start, pos - start)); }
                     catch { Console.WriteLine("Can`t parse '" + source.Substring(start) + "'"); }
